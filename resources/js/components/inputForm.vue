@@ -106,39 +106,34 @@ function checkValidForm(e) {
 
       Swal.fire({
         title: "คุณต้องการบันทึกใช่หรือไม่",
-        text:
-          "บริการ : " +
-          booking.services.join(", ") +
-          " | วัน : " +
-          booking.select_date.slot_day +
-          " | วันที่ : " +
-          booking.select_date.slot_date +
-          " | เวลา : " +
-          booking.select_date.slot_time +
-          " | ชื่อ : " +
-          booking.user_info.name +
-          " | เบอร์โทร : " +
-          booking.user_info.phone +
-          " | อีเมลย์ : " +
-          booking.user_info.email +
-          " | Line : " +
-          booking.user_info.line_id,
+        html:`
+        บริการ : ${ booking.services.join(", ")} <br>
+        วัน : ${ booking.select_date.slot_day} <br>
+        วันที่ : ${ booking.select_date.slot_date} <br>
+        เวลา : ${ booking.select_date.slot_time} <br>
+        ชื่อ : ${ booking.user_info.name } <br>
+        เบอร์โทร : ${ booking.user_info.phone} <br>
+        อีเมลย์ : ${ booking.user_info.email} <br>
+        Line : ${ booking.user_info.line_id} `,
         icon: "warning",
         showCancelButton: true,
         confirmButtonText: "บันทึก",
         cancelButtonText: "ยกเลิก",
         confirmButtonColor: "#3085d6",
         cancelButtonColor: "#d33",
+
       }).then((result) => {
         if (result.isConfirmed) {
-          Swal.fire(
-            "บันทึกสำเร็จ!",
-            "ขอบคุณที่เข้าใช่บริการกับเรา เพื่อสุขภาพที่แข็งแรง.",
-            "success"
+          Swal.fire({
+            title: "บันทึกสำเร็จ!",
+            text: "ขอบคุณที่เข้าใช่บริการกับเรา เพื่อสุขภาพที่แข็งแรง.",
+            icon:  "success",
+            timer: 2000,
+            willClose: () => {
+                this.$router.push({ path: 'selectdata' });
+            }
+          }
           );
-          setTimeout(() => {
-            window.location.href = "/selectdata";
-          }, 4000);
         }
       });
     }
