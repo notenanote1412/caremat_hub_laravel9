@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Fetch_clinicController;
+use App\Http\Controllers\Save_clinicController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +18,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/fetch_clinic_config', [Fetch_clinicController::class, 'fetch_clinic_config']);
+Route::get('/save_clinic_booking', [Save_clinicController::class, 'save_clinic_booking']);
