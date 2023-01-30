@@ -45,7 +45,7 @@ defineProps({
       :class="class_add"
     >
       <div class="">
-        <span class="text-xl font-medium">{{ time }}</span>
+        <span class="lg:text-xl text-base font-medium">{{ time }}</span>
       </div>
     </div>
   </label>

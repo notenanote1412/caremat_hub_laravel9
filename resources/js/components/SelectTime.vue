@@ -89,10 +89,15 @@ function checkBoxChange() {
       </span>
       ที่ท่านต้องการ
     </h1>
-    <span class="text-lg text-lime-500">บริการที่ท่านเลือก {{ booking.services.join(", ") }} </span>
+    <span class="lg:text-lg text-sm text-lime-500">บริการที่ท่านเลือก {{ booking.services.join(", ") }} </span>
     <div class="flex flex-col justify-center">
       <TimeBooking  @change="checkBoxChange()"></TimeBooking>
-      <div v-if="isTimeDisabled" class="leading-normal text-base md:text-xl mb-8 text-center lg:mt-8 mt-4" ><span class="text-red-500">เลือกช่วงเวลาอย่างน้อย 1 ช่วงเวลา</span></div>
+      <div class="flex justify-center py-2 place-items-center">
+            <div v-if="isTimeDisabled"
+            class="flex justify-center border-solid border-2 rounded-sm border-white lg:text-lg text-sm">
+              <span class="text-white lg:m-4 m-2">เลือกช่วงเวลาอย่างน้อย 1 ช่วงเวลา</span>
+            </div>
+        </div>
       <div class="flex space-x-2 justify-center ">
         <div class="my-2">
           <div class="flex flex-row lg:flex lg:flex-row mx-2 ">

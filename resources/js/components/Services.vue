@@ -155,11 +155,11 @@ function checkBoxChange() {
             ></ServiceCheckbox>
           </div>
         </div>
-        <div
-          v-if="isDisabled"
-          class="w-64 items-center justify-center border-2 border-white rounded-sm leading-normal text-base md:text-xl mb-8 text-center lg:mt-8 mt-4"
-        >
-          <span class="text-white">กรุณาเลือกอย่างน้อย 1 รายการ</span>
+        <div class="flex justify-center py-2 place-items-center">
+            <div v-if="isDisabled"
+            class="flex justify-center border-solid border-2 rounded-sm border-white lg:text-lg text-sm">
+              <span class="text-white lg:m-4 m-2">กรุณาเลือกอย่างน้อย 1 รายการ</span>
+            </div>
         </div>
         <div class="flex items-center justify-center m-2 lg:mt-6">
           <RouterLink to="/selecttime">

@@ -137,7 +137,7 @@ function checkValidForm(e) {
             "success"
           );
           setTimeout(() => {
-            window.location.href = "SelectData";
+            window.location.href = "/selectdata";
           }, 4000);
         }
       });
