@@ -1,7 +1,16 @@
-import './bootstrap';
+import { createApp } from "vue";
+import { createPinia } from "pinia";
 
-import { createApp } from 'vue';
+import App from "./app.vue";
+import router from "./router";
 
-import app from './component/app.vue'
+// import "./assets/main.css";
+//import "./assets/input.css"; // tailwindcss
 
-createApp(app).mount("#app")
+const app = createApp(App);
+
+app.use(createPinia());
+app.use(router);
+
+app.mount("#app");
+

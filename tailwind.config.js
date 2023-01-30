@@ -4,9 +4,15 @@ module.exports = {
     "./resources/**/*.blade.php",
     "./resources/**/*.js",
     "./resources/**/*.vue",
+    "./node_modules/tw-elements/dist/js/**/*.js",
   ],
   theme: {
-    extend: {},
+    extend: {
+        fontFamily: {
+            prompt: ["Prompt", "sans-serif"],
+            mali: ["Mali", "sans-serif"],
+          },
+    },
   },
-  plugins: [],
+  plugins: [require("tw-elements/dist/plugin")],
 }
